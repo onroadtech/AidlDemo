@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import tech.onroad.aidlserverdemo.IOnroad;
+import tech.onroad.aidlserverdemo.bean.Person;
 
 public class MainActivity extends AppCompatActivity {
     private IOnroad mIOnroad;
@@ -21,6 +22,15 @@ public class MainActivity extends AppCompatActivity {
             try {
                 String svcRet = mIOnroad.sayHello("Liting", 20);
                 Log.d("Client", "Service return " + svcRet);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+            Person person = new Person();
+            person.setName("Liting");
+            person.setAge(20);
+            try {
+                Person svcPerson = mIOnroad.introducePerson(person);
+                Log.d("Client", "Service return: Hello " + svcPerson.getName());
             } catch (RemoteException e) {
                 e.printStackTrace();
             }

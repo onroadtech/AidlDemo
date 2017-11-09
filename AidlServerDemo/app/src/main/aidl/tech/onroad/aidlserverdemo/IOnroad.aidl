@@ -2,6 +2,7 @@
 package tech.onroad.aidlserverdemo;
 
 // Declare any non-default types here with import statements
+import tech.onroad.aidlserverdemo.bean.Person;
 
 interface IOnroad {
     /**
@@ -11,4 +12,6 @@ interface IOnroad {
     /*void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
             double aDouble, String aString);*/
     String sayHello(String name, int age);
+
+    Person introducePerson(inout Person person);
 }
