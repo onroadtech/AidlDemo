@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import tech.onroad.aidlserverdemo.IOnroad;
+import tech.onroad.aidlserverdemo.bean.Hobby;
 import tech.onroad.aidlserverdemo.bean.Person;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,9 +29,11 @@ public class MainActivity extends AppCompatActivity {
             Person person = new Person();
             person.setName("Liting");
             person.setAge(20);
+            person.setHobby(Hobby.SWIM);
             try {
                 Person svcPerson = mIOnroad.introducePerson(person);
-                Log.d("Client", "Service return: Hello " + svcPerson.getName());
+                Log.d("Client", "Service return: Hello " + svcPerson.getName() +
+                        ", you hobby is " + svcPerson.getHobby());
             } catch (RemoteException e) {
                 e.printStackTrace();
             }

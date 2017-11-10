@@ -7,6 +7,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 import tech.onroad.aidlserverdemo.IOnroad;
+import tech.onroad.aidlserverdemo.bean.Hobby;
 import tech.onroad.aidlserverdemo.bean.Person;
 
 public class OnroadService extends Service {
@@ -24,10 +25,13 @@ public class OnroadService extends Service {
 
         @Override
         public Person introducePerson(Person person) throws RemoteException {
-            Log.d(TAG, "My name is " + person.getName() + ", I am " + person.getAge());
+            Log.d(TAG, "My name is " + person.getName() +
+                    ", I am " + person.getAge() +
+                    ", My hobby is " + person.getHobby());
             Person svcPerson = new Person();
             svcPerson.setName("ServicePerson");
             svcPerson.setAge(0);
+            svcPerson.setHobby(Hobby.FOOTBALL);
             return svcPerson;
         }
     };

@@ -3,6 +3,7 @@ The demo used for AIDL IPC. It includes two project -- AidlClientDemo and AidlSe
 For now, the demo support following param type as AIDL interface.
 - Basic type: Int, String, boolean and so on.
 - Self-define type: 
+- Enum:
 
 
 
@@ -11,6 +12,7 @@ For now, the demo support following param type as AIDL interface.
 支持的AIDL参数类型：
 - 基本类型
 - 自定义类型
+- 枚举
 
 
 

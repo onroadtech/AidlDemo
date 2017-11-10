@@ -10,13 +10,16 @@ import android.os.Parcelable;
 public class Person implements Parcelable {
     private String name;
     private int age;
+    private Hobby hobby;
 
-    public Person() {
+    public Person(){
+
     }
 
     protected Person(Parcel in) {
         name = in.readString();
         age = in.readInt();
+        hobby = Hobby.values()[in.readInt()];
     }
 
     public static final Creator<Person> CREATOR = new Creator<Person>() {
@@ -47,6 +50,14 @@ public class Person implements Parcelable {
         this.age = age;
     }
 
+    public Hobby getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(Hobby hobby) {
+        this.hobby = hobby;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -56,10 +67,12 @@ public class Person implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(name);
         parcel.writeInt(age);
+        parcel.writeInt(hobby.ordinal());
     }
 
     public void readFromParcel(Parcel reply) {
         this.name = reply.readString();
         this.age = reply.readInt();
+        this.hobby = Hobby.values()[reply.readInt()];
     }
 }
