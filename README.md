@@ -14,5 +14,8 @@ For now, the demo support following param type as AIDL interface.
 - 自定义类型
 - 枚举
 
-
+详情请参阅我的个人博客:
+- 基本类型：  [《跨进程间如何进行AIDL IPC 通信（一）》](http://www.onroad.tech/articles/aidl-ipc-communication-1/)
+- 自定义类型：[《跨进程间如何进行AIDL IPC 通信（二）》](http://www.onroad.tech/articles/aidl-ipc-communication-2/)
+- 枚举类型： [《跨进程间如何进行AIDL IPC 通信（三）》](http://www.onroad.tech/articles/aidl-ipc-communication-3/)
 
