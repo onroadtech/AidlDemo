@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import tech.onroad.aidljar.IAidlJarTest;
 import tech.onroad.aidlserverdemo.IOnroad;
 import tech.onroad.aidlserverdemo.bean.Hobby;
 import tech.onroad.aidlserverdemo.bean.Person;
@@ -44,13 +45,36 @@ public class MainActivity extends AppCompatActivity {
             mIOnroad = null;
         }
     };
+
+    private IAidlJarTest mIAidlJarTest;
+    ServiceConnection aidlServiceconn = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+            mIAidlJarTest = IAidlJarTest.Stub.asInterface(iBinder);
+            try {
+                mIAidlJarTest.add(8, 8);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            mIAidlJarTest = null;
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent mServiceIntent = new Intent();
-        mServiceIntent.setAction("tech.onroad.aidlservicedemo.onroadservice");
+        //mServiceIntent.setAction("tech.onroad.aidlservicedemo.onroadservice");
+        //mServiceIntent.setPackage("tech.onroad.aidlserverdemo");
+        //bindService(mServiceIntent, conn, Context.BIND_AUTO_CREATE);
+
+        //Test aidl jar service
+        mServiceIntent.setAction("tech.onroad.aidlservicedemo.aidljarservice");
         mServiceIntent.setPackage("tech.onroad.aidlserverdemo");
-        bindService(mServiceIntent, conn, Context.BIND_AUTO_CREATE);
+        bindService(mServiceIntent, aidlServiceconn, Context.BIND_AUTO_CREATE);
     }
 }
