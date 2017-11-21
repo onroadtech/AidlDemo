@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import tech.onroad.aidljar.IAidlJarTest;
+import tech.onroad.aidljar.Student;
 import tech.onroad.aidlserverdemo.IOnroad;
 import tech.onroad.aidlserverdemo.bean.Hobby;
 import tech.onroad.aidlserverdemo.bean.Person;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
             mIAidlJarTest = IAidlJarTest.Stub.asInterface(iBinder);
             try {
                 mIAidlJarTest.add(8, 8);
+                mIAidlJarTest.doHomeWork(Student.KATE);
             } catch (RemoteException e) {
                 e.printStackTrace();
             }

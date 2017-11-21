@@ -7,6 +7,7 @@ import android.os.RemoteException;
 import android.util.Log;
 
 import tech.onroad.aidljar.IAidlJarTest;
+import tech.onroad.aidljar.Student;
 import tech.onroad.aidlserverdemo.IOnroad;
 import tech.onroad.aidlserverdemo.bean.Hobby;
 import tech.onroad.aidlserverdemo.bean.Person;
@@ -21,6 +22,11 @@ public class AidlJarService extends Service {
         @Override
         public void add(int a, int b) throws RemoteException {
             Log.d(TAG, "Add result: " + (a + b));
+        }
+
+        @Override
+        public void doHomeWork(Student student) throws RemoteException {
+            Log.d(TAG, student + " do home work now!");
         }
     };
 
