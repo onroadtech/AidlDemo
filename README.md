@@ -16,11 +16,11 @@ Also support pack aidl interface as a jar library for third apps' call.
 - 枚举
 
 详情请参阅我的个人博客:
-- 基本类型：  [《跨进程间如何进行AIDL IPC 通信（一）》](http://www.onroad.tech/articles/aidl-ipc-communication-1/)
-- 自定义类型：[《跨进程间如何进行AIDL IPC 通信（二）》](http://www.onroad.tech/articles/aidl-ipc-communication-2/)
-- 枚举类型： [《跨进程间如何进行AIDL IPC 通信（三）》](http://www.onroad.tech/articles/aidl-ipc-communication-3/)
+- 基本类型：  [《跨进程间如何进行AIDL IPC 通信（一）》](http://www.onroad.tech/android-topic-aidl-ipc-communication-1/)
+- 自定义类型：[《跨进程间如何进行AIDL IPC 通信（二）》](http://www.onroad.tech/android-topic-aidl-ipc-communication-2/)
+- 枚举类型： [《跨进程间如何进行AIDL IPC 通信（三）》](http://www.onroad.tech/android-topic-aidl-ipc-communication-3/)
 
 本项目支持将AIDL接口打包成Jar包供第三方客户端调用，请参阅：
 
-[《跨进程间如何进行AIDL IPC 通信（四）》](http://www.onroad.tech/articles/aidl-ipc-communication-4/)
+[《跨进程间如何进行AIDL IPC 通信（四）》](http://www.onroad.tech/android-topic-aidl-ipc-communication-4/)
 
